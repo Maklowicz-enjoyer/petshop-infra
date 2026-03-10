@@ -33,6 +33,25 @@ variable "account_replication_type" {
 variable "tags" {
   type        = map(string)
   description = "Tagi dla zasobow Azure"
-  default = {
-  }
-}   
+  default     = {}
+}
+
+variable "my_ip" {
+  type        = string
+  description = "Twoje publiczne IP do reguł NSG"
+}
+
+variable "vnet_address_space" {
+  type        = string
+  description = "Adresacja sieci wirtualnej "
+
+}
+variable "vnet_public_subnet_address" {
+  type        = string
+  description = "Adresacja publicznej podsieci sieci wirtualnej"
+}
+
+variable "vnet_private_subnet_address" {
+  type        = string
+  description = "Adresacja prywatnej podsieci sieci wirtualnej"
+}
