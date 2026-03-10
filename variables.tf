@@ -58,7 +58,7 @@ variable "vnet_private_subnet_address" {
 variable "vm_size" {
   type        = string
   description = "Rozmiar vmki"
-  default     = "Standard_B1s"
+  default     = "Standard_D2als_v6"
 
 }
 

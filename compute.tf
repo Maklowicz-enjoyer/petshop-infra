@@ -21,13 +21,13 @@ resource "azurerm_network_interface" "main" {
   }
 }
 resource "azurerm_linux_virtual_machine" "main" {
-  name                = "vm-${var.project_name}-${var.environment}"
-  location            = azurerm_resource_group.main.location
-  resource_group_name = azurerm_resource_group.main.name
-  admin_username      = var.admin_username
+  name                            = "vm-${var.project_name}-${var.environment}"
+  location                        = azurerm_resource_group.main.location
+  resource_group_name             = azurerm_resource_group.main.name
+  admin_username                  = var.admin_username
   disable_password_authentication = true
-  tags                = local.all_tags
-  size                = var.vm_size
+  tags                            = local.all_tags
+  size                            = var.vm_size
   network_interface_ids = [
     azurerm_network_interface.main.id,
   ]
