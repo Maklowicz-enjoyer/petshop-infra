@@ -55,3 +55,21 @@ variable "vnet_private_subnet_address" {
   type        = string
   description = "Adresacja prywatnej podsieci sieci wirtualnej"
 }
+variable "vm_size" {
+  type        = string
+  description = "Rozmiar vmki"
+  default     = "Standard_B1s"
+
+}
+
+variable "admin_username" {
+  type        = string
+  description = "Admin username dla vm"
+  default     = "azadmin"
+}
+
+variable "ssh_public_key_path" {
+  type        = string
+  description = "sciezka do pliku ssh"
+  default     = "~/.ssh/petshop_dev.pub"
+}

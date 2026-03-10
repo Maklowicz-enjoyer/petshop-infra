@@ -11,6 +11,10 @@ locals {
 
   # merge() laczy Twoje custom tagi z domyslnymi
   all_tags = merge(local.default_tags, var.tags)
+
+  public_ip_name = "pip-${var.project_name}-${var.environment}"
+  nic-name       = "nic-${var.project_name}-${var.environment}"
+  vm-name        = "vm-${var.project_name}-${var.environment}"
 }
 
 # -------------------------------------------

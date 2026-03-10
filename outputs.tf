@@ -49,3 +49,17 @@ output "nsg_private_name" {
   value       = azurerm_network_security_group.private.name
   description = "Nazwa NSG private"
 }
+
+output "public_ip_address" {
+  value       = azurerm_public_ip.main.ip_address
+  description = "Publiczny adres IP"
+}
+output "vm_name" {
+  value       = azurerm_linux_virtual_machine.main.name
+  description = "Nazwa maszyny wirtualnej"
+}
+
+output "ssh_connection" {
+  value       = "ssh -i ${var.ssh_public_key_path} ${var.admin_username}@${azurerm_public_ip.main.ip_address}"
+  description = "komenda ssh do poloczenia sie z vmka"
+}
