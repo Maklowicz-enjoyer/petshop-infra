@@ -48,7 +48,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -var-file=environments/dev.tfvars -var="my_ip=${{ secrets.ADMIN_IP }}" -out=tfplan
+        run: terraform plan -var-file=environments/dev.tfvars -var="my_ip=${{ secrets.ADMIN_IP }}" -var="ssh_public_key=${{ secrets.SSH_PUBLIC_KEY }}" -out=tfplan
         continue-on-error: true
 
       - name: Comment Plan on PR

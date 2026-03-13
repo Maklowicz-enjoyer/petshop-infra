@@ -73,5 +73,4 @@ variable "admin_username" {
 variable "ssh_public_key_path" {
   type        = string
   description = "sciezka do pliku ssh"
-  default     = "~/.ssh/petshop_dev.pub"
 }
