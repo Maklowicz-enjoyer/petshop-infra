@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - main
-    push:
+  push:
     branches:
       - main
 
@@ -19,10 +19,9 @@ env:
   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   ARM_USE_OIDC: true
 
-
 jobs:
-  terraform:
-    name: "terraform plan"
+  terraform-plan:
+    name: "Terraform Plan"
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
@@ -30,11 +29,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup terraform
+      - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
-        
 
-      - name: Terraform format
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Format
         id: fmt
         run: terraform fmt -check
         continue-on-error: true
@@ -45,7 +47,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -out=tfplan
+        run: terraform plan -var-file=environments/dev.tfvars -var="my_ip=${{ secrets.ADMIN_IP }}" -out=tfplan
         continue-on-error: true
 
       - name: Comment Plan on PR
@@ -80,4 +82,3 @@ jobs:
       - name: Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-
