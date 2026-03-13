@@ -70,7 +70,7 @@ variable "admin_username" {
   default     = "azadmin"
 }
 
-variable "ssh_public_key_path" {
+variable "ssh_public_key" {
   type        = string
   description = "sciezka do pliku ssh"
 }
