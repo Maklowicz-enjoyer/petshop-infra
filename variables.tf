@@ -1,3 +1,4 @@
+/*
 variable "subscription_id" {
   type        = string
   description = "Subscription ID dla wdrozenia terraform"
@@ -8,6 +9,7 @@ variable "tenant_id" {
   description = "Tenant ID dla wdrozenia terraform"
 
 }
+*/
 variable "project_name" {
   type        = string
   description = "uzywana do generowania nazw zasobow"
