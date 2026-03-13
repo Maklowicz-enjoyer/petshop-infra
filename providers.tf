@@ -10,6 +10,7 @@ terraform {
     storage_account_name = "stterraformjvlvqg"
     container_name = "tfstate"
     key = "petshop.tfstate"
+    use_azuread_auth = true
     
     
   }
