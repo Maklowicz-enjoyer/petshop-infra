@@ -60,6 +60,6 @@ output "vm_name" {
 }
 
 output "ssh_connection" {
-  value       = "ssh -i ${var.ssh_public_key_path} ${var.admin_username}@${azurerm_public_ip.main.ip_address}"
+  value       = "ssh -i ${var.ssh_public_key} ${var.admin_username}@${azurerm_public_ip.main.ip_address}"
   description = "komenda ssh do poloczenia sie z vmka"
 }

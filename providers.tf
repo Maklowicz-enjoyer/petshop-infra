@@ -6,16 +6,16 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name   = "rg-terraform-state"
+    resource_group_name  = "rg-terraform-state"
     storage_account_name = "stterraformjvlvqg"
-    container_name = "tfstate"
-    key = "petshop.tfstate"
-    
-    
+    container_name       = "tfstate"
+    key                  = "petshop.tfstate"
+
+
   }
 }
 
 provider "azurerm" {
   features {}
-  
+
 } 
