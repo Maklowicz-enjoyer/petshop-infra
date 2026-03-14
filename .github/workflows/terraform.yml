@@ -13,9 +13,7 @@ permissions:
   id-token: write
   pull-requests: write
   
-concurrency:
-  group: terraform
-  cancel-in-progress: true
+  
 
 env:
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
