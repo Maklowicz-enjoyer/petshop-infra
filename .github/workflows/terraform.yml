@@ -12,6 +12,10 @@ permissions:
   contents: read
   id-token: write
   pull-requests: write
+
+concurrency:
+  group: terraform
+  cancel-in-progress: true
   
   
 
